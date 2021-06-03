@@ -1,0 +1,17 @@
+version: '3.7'
+services:
+    main:
+        container_name: send-text-backend
+        build:
+            context: .
+        image: send-text-backend
+        volumes:
+            - .:/usr/src/app
+            - /usr/src/app/node_modules
+        ports:
+            - 3000:3000
+        command: npm run server
+        networks:
+            - webnet
+networks:
+    webnet:
