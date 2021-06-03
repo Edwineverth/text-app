@@ -13,7 +13,7 @@ app.server = http.createServer(app);
 
 app.use(morgan('dev'));
 
-app.use(cors({ origin: 'http://localhost:9000' }));
+app.use(cors({ origin: ['http://localhost:9000','http://0.0.0.0:9000']}));
 
 app.use(
   bodyParser.json({
